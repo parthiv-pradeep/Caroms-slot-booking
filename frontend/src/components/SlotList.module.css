@@ -1,0 +1,40 @@
+.slotList {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .slotList h2 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  
+  .slotList ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .slotList li {
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .slotList button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .slotList button:hover {
+    background-color: #c0392b;
+  }
+  
+  
