@@ -1,13 +1,35 @@
 .header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 30px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem; /* Reduced font size for smaller screens */
+}
+
+/* Mobile responsiveness using media queries */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px; /* Slightly smaller padding on mobile */
+    margin-bottom: 20px; /* Adjust margin as needed */
   }
-  
+
   .header h1 {
-    margin: 0;
+    font-size: 1.2rem; /* Further reduce font size for even smaller screens */
   }
-  
-  
+}
+
+@media (max-width: 480px) { /* Extra small screens */
+  .header {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .header h1 {
+    font-size: 1rem; /* Smallest font size */
+  }
+}

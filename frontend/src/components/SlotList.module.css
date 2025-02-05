@@ -1,40 +1,88 @@
 .slotList {
-    background-color: #ecf0f1;
-    padding: 20px;
-    border-radius: 8px;
+  background-color: #ecf0f1;
+  padding: 15px; /* Reduced padding */
+  border-radius: 8px;
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.slotList h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.3rem; /* Smaller heading for mobile */
+}
+
+.slotList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.slotList li {
+  background-color: white;
+  margin-bottom: 8px; /* Reduced margin */
+  padding: 8px; /* Reduced padding */
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem; /* Smaller font size for list items */
+}
+
+.slotList li span {
+  flex-grow: 1; /* Allow the time span to grow and take available space */
+  margin-right: 10px; /* Add spacing between time and button */
+}
+
+.slotList li ul {
+  margin-top: 5px; /* Space between time and player list */
+  padding-left: 20px; /* Indent the player list */
+}
+
+.slotList li ul li {
+  background-color: transparent; /* Make player list items transparent */
+  padding: 0; /* Remove padding from player list items */
+  margin-bottom: 0; /* Remove margin from player list items */
+  font-size: 0.85rem; /* Even smaller font for player names */
+  display: list-item; /* Show bullet points for list */
+  list-style-type: disc; /* Use disc bullets */
+}
+
+.slotList button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 4px 8px; /* Smaller padding for button */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem; /* Smaller font size for button text */
+}
+
+.slotList button:hover {
+  background-color: #c0392b;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .slotList {
+    padding: 10px; /* Even smaller padding */
+    margin-bottom: 8px; /* Even smaller margin */
   }
-  
+
   .slotList h2 {
-    margin-top: 0;
-    color: #2c3e50;
+    font-size: 1.1rem; /* Even smaller heading */
   }
-  
-  .slotList ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
+
   .slotList li {
-    background-color: white;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 0.8rem; /* Even smaller font for list items */
+    flex-direction: column; /* Stack time and button vertically */
+    align-items: flex-start; /* Align items to the start */
   }
-  
+
+  .slotList li span {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 5px; /* Add space between time and button */
+  }
+
   .slotList button {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+    font-size: 0.7rem; /* Even smaller font for button text */
   }
-  
-  .slotList button:hover {
-    background-color: #c0392b;
-  }
-  
-  
+}

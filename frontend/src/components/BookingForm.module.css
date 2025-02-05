@@ -1,43 +1,99 @@
 .form {
-    background-color: #ecf0f1;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .form h2 {
-    margin-top: 0;
-    color: #2c3e50;
-  }
-  
-  .formGroup {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.form h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 1.5rem; /* Adjusted heading size */
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 1rem; /* Adjusted input text size */
+}
+
+.form button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem; /* Adjusted button text size */
+}
+
+.form button:hover {
+  background-color: #2980b9;
+}
+
+/* Mobile responsiveness using media queries */
+@media (max-width: 768px) {
+  .form {
+    padding: 15px;
     margin-bottom: 15px;
   }
-  
+
+  .form h2 {
+    font-size: 1.3rem;
+  }
+
+  .formGroup {
+    margin-bottom: 10px;
+  }
+
   .formGroup label {
-    display: block;
-    margin-bottom: 5px;
-    color: #34495e;
+    font-size: 0.9rem;
   }
-  
+
   .formGroup input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #bdc3c7;
-    border-radius: 4px;
+    padding: 6px;
+    font-size: 0.9rem;
   }
-  
+
   .form button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
-  
-  .form button:hover {
-    background-color: #2980b9;
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 10px;
+    margin-bottom: 10px;
   }
-  
-  
+
+  .form h2 {
+    font-size: 1.1rem;
+  }
+
+  .formGroup label {
+    font-size: 0.8rem;
+  }
+
+  .formGroup input {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+
+  .form button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
