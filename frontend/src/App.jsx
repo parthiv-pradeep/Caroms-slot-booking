@@ -5,6 +5,10 @@ import SlotList from "./components/SlotList"
 import CarromBoard from "./components/CarromBoard"
 import styles from "./App.module.css"
 
+
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+fetch(`${API_URL}/api/slots`)
+
 function App() {
   const [slots, setSlots] = useState([])
   const [error, setError] = useState(null)
