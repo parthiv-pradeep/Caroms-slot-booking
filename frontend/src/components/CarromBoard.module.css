@@ -3,11 +3,10 @@
   max-width: 500px; /* Optional: set a maximum size */
   height: 0;
   padding-bottom: 90vw; /* Match width for square aspect ratio */
-  max-padding-bottom: 500px; /* Optional: match max-width */
+  max-height: 500px; /* Optional: match max-width */
   background-color: #d35400;
   position: relative;
   border: 5vw solid #8b4513; /* Scale border with viewport */
-  max-border: 20px solid #8b4513; /* keep border same on desktop view */
   box-sizing: border-box;
   margin: 0 auto; /* Center the board horizontally */
 }
@@ -24,30 +23,22 @@
 
 .corner:nth-child(1) {
   top: 4vw; /* Scale corner position */
-  max-top: 20px; /* keep corner same size on desktop view */
   left: 4vw; /* Scale corner position */
-  max-left: 20px; /* keep corner same size on desktop view */
 }
 
 .corner:nth-child(2) {
   top: 4vw; /* Scale corner position */
-  max-top: 20px; /* keep corner same size on desktop view */
   right: 4vw; /* Scale corner position */
-  max-right: 20px; /* keep corner same size on desktop view */
 }
 
 .corner:nth-child(3) {
   bottom: 4vw; /* Scale corner position */
-  max-bottom: 20px; /* keep corner same size on desktop view */
   left: 4vw; /* Scale corner position */
-  max-left: 20px; /* keep corner same size on desktop view */
 }
 
 .corner:nth-child(4) {
   bottom: 4vw; /* Scale corner position */
-  max-bottom: 20px; /* keep corner same size on desktop view */
   right: 4vw; /* Scale corner position */
-  max-right: 20px; /* keep corner same size on desktop view */
 }
 
 .center {
@@ -64,7 +55,6 @@
 }
 
 /* Optional: Media query for larger screens to limit the board size */
-/* Keep the board from getting too large on desktop */
 @media (min-width: 768px) {
   .carromBoard {
     width: 500px;
