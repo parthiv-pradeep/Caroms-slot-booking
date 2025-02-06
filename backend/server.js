@@ -17,11 +17,10 @@ app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
 
 // MongoDB Connection
-mongoose
-  .connect("mongodb://localhost:27017/carrom_booking", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
