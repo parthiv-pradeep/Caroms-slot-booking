@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 
 // Middleware
-app.use(cors()); // Enable CORS for all routes
+app.use(cors({ origin: 'https://caroms-slot-booking-frontend.onrender.com' })); // Enable CORS for all routes
 app.use(express.json());
 
 // MongoDB Connection
