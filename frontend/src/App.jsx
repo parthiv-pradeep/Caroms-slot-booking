@@ -12,14 +12,14 @@ fetch(`${API_URL}/api/slots`)
 function App() {
   const [slots, setSlots] = useState([])
   const [error, setError] = useState(null)
-
   useEffect(() => {
-    fetchSlots()
-  }, [])
+    fetchSlots();
+}, []);
 
-  const fetchSlots = async () => {
+
+const fetchSlots = async () => {  // ✅ Move function above useEffect
     try {
-        const response = await fetch(`${API_URL}/api/slots`);  // ✅ Use API_URL instead of localhost
+        const response = await fetch(`${API_URL}/api/slots`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -32,10 +32,11 @@ function App() {
     }
 };
 
+
 const addSlot = async (newSlot) => {
   console.log("Data being sent to create a new slot:", newSlot);
   try {
-      const response = await fetch(`${API_URL}/api/slots`, {  // ✅ Use API_URL
+      const response = await fetch(`${API_URL}/api/slots`, {  
           method: "POST",
           headers: {
               "Content-Type": "application/json",
