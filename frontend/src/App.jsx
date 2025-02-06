@@ -19,59 +19,57 @@ function App() {
 
   const fetchSlots = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/slots")
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-      const data = await response.json()
-      console.log("Fetched slots:", data)
-      setSlots(data)
+        const response = await fetch(`${API_URL}/api/slots`);  // ✅ Use API_URL instead of localhost
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("Fetched slots:", data);
+        setSlots(data);
     } catch (error) {
-      console.error("Error fetching slots:", error)
-      setError("Failed to fetch slots. Please try again later.")
+        console.error("Error fetching slots:", error);
+        setError("Failed to fetch slots. Please try again later.");
     }
-  }
+};
 
-  const addSlot = async (newSlot) => {
-    console.log("Data being sent to create a new slot:", newSlot);
-    try {
-      const response = await fetch("http://localhost:5000/api/slots", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newSlot),
-      })
+const addSlot = async (newSlot) => {
+  console.log("Data being sent to create a new slot:", newSlot);
+  try {
+      const response = await fetch(`${API_URL}/api/slots`, {  // ✅ Use API_URL
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newSlot),
+      });
       if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || `HTTP error! status: ${response.status}`)
+          const errorData = await response.json();
+          throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
-      const data = await response.json()
-      console.log("Added new slot:", data)
-      // Instead of fetchSlots, update the state directly for better performance
+      const data = await response.json();
+      console.log("Added new slot:", data);
       setSlots(prevSlots => [...prevSlots, data]);
-    } catch (error) {
-      console.error("Error adding slot:", error)
-      setError(`Failed to add slot: ${error.message}`)
-    }
+  } catch (error) {
+      console.error("Error adding slot:", error);
+      setError(`Failed to add slot: ${error.message}`);
   }
+};
 
-  const finishSlot = async (id) => {
- try {
-   const response = await fetch(`http://localhost:5000/api/slots/${id}`, {  // Use backticks for template literal
-     method: "DELETE",
-   })
-   if (!response.ok) {
-     throw new Error(`HTTP error! status: ${response.status}`)
-   }
-   console.log("Finished slot:", id)
-   // Instead of fetchSlots, update the state directly for better performance
-   setSlots(prevSlots => prevSlots.filter(slot => slot._id !== id)); // Assuming your slot object has an '_id' property. If it's 'id', change accordingly.
- } catch (error) {
-   console.error("Error finishing slot:", error)
-   setError("Failed to finish slot. Please try again later.")
- }
-}
+const finishSlot = async (id) => {
+  try {
+      const response = await fetch(`${API_URL}/api/slots/${id}`, {  // ✅ Use API_URL
+          method: "DELETE",
+      });
+      if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      console.log("Finished slot:", id);
+      setSlots(prevSlots => prevSlots.filter(slot => slot._id !== id));
+  } catch (error) {
+      console.error("Error finishing slot:", error);
+      setError("Failed to finish slot. Please try again later.");
+  }
+};
 
   return (
     <div className={styles.app}>
