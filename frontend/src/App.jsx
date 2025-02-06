@@ -6,7 +6,7 @@ import CarromBoard from "./components/CarromBoard"
 import styles from "./App.module.css"
 
 
-const API_URL = 'https://caroms-slot-booking.onrender.com';
+const API_URL = 'https://caroms-slot-booking-backend.onrender.com';
 fetch(`${API_URL}/api/slots`)
 
 function App() {
