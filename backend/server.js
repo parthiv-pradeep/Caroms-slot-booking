@@ -17,12 +17,16 @@ app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://admin:admin@cluster0.2ttr1.mongodb.net/carrom_booking?retryWrites=true&w=majority";
+mongoose
+  .connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
+
 
 // Routes
 app.use("/api/slots", slotRoutes);
