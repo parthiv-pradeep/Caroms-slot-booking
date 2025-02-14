@@ -6,9 +6,9 @@ import CarromBoard from "./components/CarromBoard"
 import styles from "./App.module.css"
 
 
-const API_URL = 'https://caroms-slot-booking-backend.onrender.com';
-fetch(`${API_URL}/api/slots`)
-
+const API_URL = process.env.NODE_ENV === "development" 
+  ? "http://localhost:5000"  // Change this to your local backend URL
+  : "https://caroms-slot-booking-backend.onrender.com";
 function App() {
   const [slots, setSlots] = useState([])
   const [error, setError] = useState(null)
